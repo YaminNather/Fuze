@@ -8,10 +8,28 @@ namespace MainGameMgrStuff
     public class BallsSpawner : MonoBehaviour
     {
         #region Variables
+        [Header("Prefabs")]
         [SerializeField] private BallPawn m_NormalBallPawnPrefab;
         [SerializeField] private BlackBallPawn m_BlackBallPawnPrefab;
         [SerializeField] private AnyColorBallPawn m_AnyColorBallPawnPrefab;
+        
+        [Header("Materials Stuff")]
+        [SerializeField] private Material[] m_BallMaterials;
+        [SerializeField] private Texture2D m_BallTexture2D;
         #endregion
+
+        private void Awake()
+        {
+            SetBallTexture_F(m_BallTexture2D);
+        }
+
+        private void SetBallTexture_F(Texture2D texture)
+        {
+            if (m_BallMaterials == null || m_BallMaterials.Length == 0) return;
+
+            foreach(Material material in m_BallMaterials) 
+                material.SetTexture("_EmissionMap", texture);
+        }
 
         public NormalBallPawn SpawnNormalBall_F(Vector3 pos, Color color)
         {
