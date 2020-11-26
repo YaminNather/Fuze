@@ -6229,7 +6229,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 9be3e0b63f15e3b42869c0744ab94809, type: 2}
   - {fileID: 2100000, guid: 5238184f0c741cb47a9df68a71dccfd1, type: 2}
   - {fileID: 2100000, guid: eba597b30ff805542a9507f7a8f2cc30, type: 2}
-  m_BallTexture2D: {fileID: 2800000, guid: 873b71cf98d77bb419fe5c126b93813e, type: 3}
+  m_BallTexture2D: {fileID: 2800000, guid: a5aaee5db8dd64040a37d6a537c05b85, type: 3}
 --- !u!114 &844915958
 MonoBehaviour:
   m_ObjectHideFlags: 0
