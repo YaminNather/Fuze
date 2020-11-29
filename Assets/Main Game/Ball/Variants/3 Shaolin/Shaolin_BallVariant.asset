@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c0a23351b8e7f848959bd38df97a7c0, type: 3}
   m_Name: Shaolin_BallVariant
   m_EditorClassIdentifier: 
-  m_BallT2D: {fileID: 2800000, guid: c5a8f822413348d46864fd3d10145773, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c5a8f822413348d46864fd3d10145773, type: 3}

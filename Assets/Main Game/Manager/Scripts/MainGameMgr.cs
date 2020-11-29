@@ -48,17 +48,32 @@ namespace MainGameMgrStuff
 
         private void Start()
         {
-            StartCoroutine(Start_IEF());
+            if (!SceneManager.GetSceneByName("Global0_Scene").isLoaded)
+            {
+                GlobalSceneChecker globalSceneChecker = gameObject.AddComponent<GlobalSceneChecker>();
+                globalSceneChecker.OnLoadCompleteE += () => StartCoroutine(Start_IEF());
+                globalSceneChecker.LoadGlobalScene_F();
+            }
 
             IEnumerator Start_IEF()
             {
                 yield return null;
+
+                //Setting Ball Texture.
+                m_BallsSpawner.SetBallTexture_F(
+                    GlobalMgr.GetBallVariant_F(Random.Range(0, GlobalMgr.GetBallVariantsCount_F())).GetBallSprite_F().texture
+                    );
+
+                //Setting random colors for existing balls.
                 foreach (BallPawn ballPawn in FindObjectsOfType<BallPawn>())
                     ballPawn.SetColor_F(MainGameMgr.GetColorsMgr_F().GetRandomColor_F());
-                m_Camera.BlendToGameVCamera_F(2.0f);
-                
-                yield return new WaitForSeconds(2.0f);
 
+                //Move Camera from the top to game view.
+                m_Camera.BlendToGameVCamera_F(2.0f);
+                yield return new WaitForSeconds(2.0f);
+                
+
+                //Setup launch ball.
                 SetupLaunchBall_F(0.0f);
             }
         }
@@ -135,7 +150,7 @@ namespace MainGameMgrStuff
                 yield return new WaitForSeconds(0.2f);
                 m_Camera.DoEndGameTransition_F();
                 yield return new WaitForSeconds(4.0f);
-                SceneManager.LoadScene(0);
+                SceneManager.LoadScene("Main Menu0_Scene");
             }
 
             IEnumerator destroyAllBalls_IEF()
@@ -178,10 +193,6 @@ namespace MainGameMgrStuff
         [MenuItem("Custom/Scenes/Main Game")]
         private static void OpenMainGameScene_F()
             => UnityEditor.SceneManagement.EditorSceneManager.OpenScene("Assets/Main Game/Scenes/Main Game0_Scene.unity", OpenSceneMode.Single);
-
-        [MenuItem("Custom/Scenes/Main Menu")]
-        private static void OpenMainMenuScene_F()
-            => UnityEditor.SceneManagement.EditorSceneManager.OpenScene("Assets/Main Menu/Scenes/Main Menu0_Scene.unity", OpenSceneMode.Single);
     }
 #endif
 }

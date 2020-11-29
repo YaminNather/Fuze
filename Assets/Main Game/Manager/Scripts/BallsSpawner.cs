@@ -15,15 +15,9 @@ namespace MainGameMgrStuff
         
         [Header("Materials Stuff")]
         [SerializeField] private Material[] m_BallMaterials;
-        [SerializeField] private Texture2D m_BallTexture2D;
         #endregion
 
-        private void Awake()
-        {
-            SetBallTexture_F(m_BallTexture2D);
-        }
-
-        private void SetBallTexture_F(Texture2D texture)
+        public void SetBallTexture_F(Texture2D texture)
         {
             if (m_BallMaterials == null || m_BallMaterials.Length == 0) return;
 

@@ -66,6 +66,8 @@ namespace MainMenu.Pages.MainPage
             m_TitleAnimSeq.AppendCallback(StartTitleFlicker_F);
         }
 
-        public void PlayBtn_BEF() => SceneManager.LoadScene(1);
+        public void PlayBtn_BEF() => SceneManager.LoadScene("Main Game0_Scene");
+
+        public void StoreBtn_BEF() => MainMenuMgr.GetPage_F(MainMenuMgr.EPages.Store).Open_F();
     }
 }

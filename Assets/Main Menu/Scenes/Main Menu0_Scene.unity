@@ -688,6 +688,7 @@ GameObject:
   m_Component:
   - component: {fileID: 737468537}
   - component: {fileID: 737468540}
+  - component: {fileID: 737468541}
   - component: {fileID: 737468539}
   - component: {fileID: 737468538}
   m_Layer: 0
@@ -779,6 +780,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 737468536}
   m_CullTransparentMesh: 1
+--- !u!114 &737468541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737468536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ed8650b5378e4348b0cd0053d963f79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &791128910
 GameObject:
   m_ObjectHideFlags: 0
@@ -1821,13 +1834,14 @@ GameObject:
   - component: {fileID: 1441805488}
   - component: {fileID: 1441805490}
   - component: {fileID: 1441805489}
+  - component: {fileID: 1441805491}
   m_Layer: 0
   m_Name: Store Page
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1441805488
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1889,6 +1903,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1441805491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441805487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc16255000c09ad4ea26cae702ff2dd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BuyBtnsHolder: {fileID: 737468541}
 --- !u!1 &1639639518
 GameObject:
   m_ObjectHideFlags: 0
@@ -2411,7 +2438,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1797007881}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1010014885}
+        m_TargetAssemblyTypeName: MainMenu.Pages.MainPage.MainPageMgr, Assembly-CSharp
+        m_MethodName: StoreBtn_BEF
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1797007881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2749,7 +2788,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4646307054695544891, guid: b7095049927444f469ffcbfea96e579b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4646307054695544891, guid: b7095049927444f469ffcbfea96e579b, type: 3}
       propertyPath: m_AnchorMin.x
@@ -2757,15 +2796,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4646307054695544891, guid: b7095049927444f469ffcbfea96e579b, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4646307054695544891, guid: b7095049927444f469ffcbfea96e579b, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 4646307054695544891, guid: b7095049927444f469ffcbfea96e579b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 4646307054695544891, guid: b7095049927444f469ffcbfea96e579b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2797,11 +2836,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4646307054695544891, guid: b7095049927444f469ffcbfea96e579b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 4646307054695544891, guid: b7095049927444f469ffcbfea96e579b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -160
       objectReference: {fileID: 0}
     - target: {fileID: 4646307054695544891, guid: b7095049927444f469ffcbfea96e579b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
